@@ -4,4 +4,4 @@
 
 You will find the live [demo](https://accordion-zeta-flax.vercel.app/) here..
 
-<img src="public/Demo.png" alt="Demo Image" width="200"/>
+<img src="public/Demo.png" alt="Demo Image" width="800"/>
