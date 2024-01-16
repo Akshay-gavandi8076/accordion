@@ -10,14 +10,17 @@ const FAQItem: React.FC<FAQItemProps> = ({
 }) => {
   const contentRef = useRef<HTMLDivElement>(null)
   const [contentHeight, setContentHeight] = useState<number | null>(null)
+  const [arrowRotation, setArrowRotation] = useState(0)
 
   useEffect(() => {
     if (contentRef.current) {
       setContentHeight(showAnswer ? contentRef.current.scrollHeight : 0)
     }
+    setArrowRotation(showAnswer ? 180 : 0)
   }, [showAnswer])
 
   const transitionDuration = 1 // Content transition duration in seconds
+  const transitionDurationArrow = 1 // Arrow rotation duration in seconds
   const transitionTiming = 'cubic-bezier(0.4, 0, 0.2, 1)' // Easing function
 
   return (
@@ -32,7 +35,15 @@ const FAQItem: React.FC<FAQItemProps> = ({
           </h3>
         </div>
         <div className='text-lg'>
-          <FaChevronDown className='text-blue-500 transition-transform text-lg sm:text-lg md:text-xl lg:text-2xl' />
+          <FaChevronDown
+            className='text-blue-500 transition-transform text-lg sm:text-lg md:text-xl lg:text-2xl'
+            style={{
+              transform: `rotate(${arrowRotation}deg)`,
+              transitionTimingFunction: transitionTiming,
+              transitionDuration: `${transitionDurationArrow}s`,
+              transformOrigin: 'center',
+            }}
+          />
         </div>
       </div>
       <div
