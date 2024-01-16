@@ -1,7 +1,5 @@
 # Accordion
 
-[![Demo](public/Demo.png)](https://accordion-zeta-flax.vercel.app/)
-
 ## Table of Contents
 
 - [Getting Started](#getting-started)
