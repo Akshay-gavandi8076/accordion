@@ -1,4 +1,3 @@
-// FAQList.tsx
 import React, { useEffect, useState } from 'react'
 import FAQItem from './FAQItem'
 import Button from '../Button/Button'
