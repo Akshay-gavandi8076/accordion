@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react'
-import Button from '../UI/Button'
 import { fetchFAQData } from '../../api/api'
-import { FAQDataItem } from '../../types/types'
+import { FAQListProps } from '../../types/types'
 import FAQItem from './FAQItem'
+import Button from '../UI/Button'
 
 const FAQList: React.FC = () => {
-  const [faqData, setFaqData] = useState<FAQDataItem[]>([])
+  const [faqData, setFaqData] = useState<FAQListProps[]>([])
   const [visibleEntries, setVisibleEntries] = useState<number>(10)
 
   const fetchData = async () => {
     try {
       const data = await fetchFAQData()
-      const itemsWithAnswer: FAQDataItem[] = data.map((item: any) => ({
+      const itemsWithAnswer: FAQListProps[] = data.map((item: any) => ({
         ...item,
         showAnswer: false,
       }))
@@ -34,7 +34,7 @@ const FAQList: React.FC = () => {
   }, [])
 
   const renderFAQItem = useCallback(
-    (item: FAQDataItem, index: number) => (
+    (item: FAQListProps, index: number) => (
       <div
         key={item.id}
         className='bg-white rounded-lg shadow-md mb-4'

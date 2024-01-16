@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export interface FAQDataItem {
+export interface FAQListProps {
   id: number
   title: string
   body: string
@@ -11,7 +11,7 @@ export interface ButtonProps {
   onClick: () => void
 }
 
-export interface FAQItemProps extends FAQDataItem {
+export interface FAQItemProps extends FAQListProps {
   onClick: () => void
 }
 
