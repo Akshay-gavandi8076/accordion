@@ -5,7 +5,6 @@
 - [Getting Started](#getting-started)
 - [Tech Stack](#tech-stack)
 - [Demo](#demo)
-- [License](#license)
 
 ## Getting Started
 
