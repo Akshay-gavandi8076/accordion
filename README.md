@@ -4,8 +4,4 @@
 
 You will find the live [demo](https://accordion-zeta-flax.vercel.app/) here..
 
-![Demo](public/Demo.png)
-
-```bash
-  git clone https://github.com/Akshay-gavandi8076/accordion.git
-```
+<img src="public/Demo.png" alt="Demo Image" width="200"/>
