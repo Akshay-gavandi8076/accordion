@@ -1,4 +1,3 @@
-// api.test.ts
 import { fetchFAQData } from '../api/api'
 
 describe('API', () => {

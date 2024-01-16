@@ -1,4 +1,3 @@
-// FAQItemArrow.tsx
 import React from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 import { ArrowIconProps } from '../../types/types'

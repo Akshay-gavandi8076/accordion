@@ -3,12 +3,10 @@ import { render, screen, waitFor } from '@testing-library/react'
 import { fetchFAQData } from '../api/api'
 import FAQList from '../components/FAQ/FAQList'
 
-// Mock the API function
 jest.mock('../api/api', () => ({
   fetchFAQData: jest.fn(),
 }))
 
-// Sample FAQ data for testing
 const sampleFAQData = [
   {
     userId: 1,
@@ -27,20 +25,16 @@ const sampleFAQData = [
 
 describe('FAQList Component', () => {
   beforeEach(() => {
-    // Reset the mock implementation before each test
     jest.clearAllMocks()
   })
 
   it('renders FAQs', async () => {
-    // Mock the API response
     ;(fetchFAQData as jest.Mock).mockResolvedValue(sampleFAQData)
 
     render(<FAQList />)
 
-    // Wait for the fetchFAQData to be called and resolve
     await waitFor(() => expect(fetchFAQData).toHaveBeenCalled())
 
-    // Wait for FAQs to be rendered
     await waitFor(() => {
       expect(
         screen.getByText(
@@ -49,7 +43,6 @@ describe('FAQList Component', () => {
       ).toBeInTheDocument()
     })
 
-    // Separate assertion for the second FAQ
     await waitFor(() => {
       expect(screen.getByText('qui est esse')).toBeInTheDocument()
     })

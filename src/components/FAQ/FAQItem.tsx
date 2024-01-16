@@ -1,4 +1,3 @@
-// FAQItem.tsx
 import React, { useRef, useEffect, useState } from 'react'
 import { FAQItemProps } from '../../types/types'
 import Header from '../UI/Header'
